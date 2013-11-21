@@ -1,7 +1,7 @@
 " Minimal vimrc 
 
 " Author: Ravi Sharan B A G
-" Last Change: 06 Oct 2013
+" Last Change: 20 Nov 2013
 
 " Use Vim settings, rather than Vi setings.
 " If you don't understand a setting in here, just type ':h setting'.
@@ -24,10 +24,11 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme slate 
+colorscheme slate
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
 
-
+" vim-pathogen
+execute pathogen#infect()
