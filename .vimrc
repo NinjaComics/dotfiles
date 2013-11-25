@@ -32,3 +32,6 @@ vnoremap > >gv " better indentation
 
 " vim-pathogen
 execute pathogen#infect()
+
+" Make backspace work normally 
+set bs=2 
