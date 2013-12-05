@@ -34,4 +34,7 @@ vnoremap > >gv " better indentation
 execute pathogen#infect()
 
 " Make backspace work normally 
-set bs=2 
+set bs=2
+
+" Allow mouse in xterm or GUI
+set mouse=a
