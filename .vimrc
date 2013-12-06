@@ -38,3 +38,6 @@ set bs=2
 
 " Allow mouse in xterm or GUI
 set mouse=a
+
+" Escape is too far away without this mapping
+inoremap jj <Esc> 
