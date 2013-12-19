@@ -40,4 +40,7 @@ set bs=2
 set mouse=a
 
 " Escape is too far away without this mapping
-inoremap jj <Esc> 
+inoremap jj <Esc>
+
+" Automatically indent C code
+set cindent
