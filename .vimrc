@@ -34,7 +34,7 @@ vnoremap > >gv " better indentation
 execute pathogen#infect()
 
 " Make backspace work normally 
-set bs=2
+set bs=indent,eol,start
 
 " Allow mouse in xterm or GUI
 set mouse=a
@@ -44,3 +44,43 @@ inoremap jj <Esc>
 
 " Automatically indent C code
 set cindent
+
+" Strip all trailing whitespace characters in current file
+nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
+
+" set the leader key 
+let mapleader = ","
+
+" Don't be strictly old vi-like
+set nocompatible
+
+"Show the cursor position
+set ruler
+
+" Make Y behave similar to C and D (from cursor to end of line)
+nnoremap Y y$
+
+" Map <leader>y, x and p as shortcuts for copy, cut and paste (respectively)
+" to/from system (X) clipboard when supported (Eg: gvim).
+nnoremap <leader>y "+y
+vnoremap <leader>y "+y
+nnoremap <leader>x "+x
+vnoremap <leader>x "+x
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
+
+" Insert newline without entering into insert mode
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
+"Find while pattern is being entered
+set incsearch
+
+"Show title
+set title
+
+" make hjkl movements accessible from insert mode via the <Alt> modifier key
+inoremap <A-h> <C-o>h
+inoremap <A-j> <C-o>j
+inoremap <A-k> <C-o>k
+inoremap <A-l> <C-o>:qjl
