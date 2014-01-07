@@ -1,4 +1,5 @@
 " Minimal vimrc 
+"
 
 " Author: Ravi Sharan B A G
 " Last Change: 20 Nov 2013
@@ -84,3 +85,22 @@ inoremap <A-h> <C-o>h
 inoremap <A-j> <C-o>j
 inoremap <A-k> <C-o>k
 inoremap <A-l> <C-o>:qjl
+
+"Add a line above and below the current one without moving the cursor
+nnoremap <leader>oo m`o<Esc>kO<Esc>``
+
+"Highlight Trailing whitespaces
+match Error /\s\+$/
+
+" Auto Close Parentheses, Brackets and Braces
+"imap { {}<left>
+"imap ( ()<left>
+"imap [ []<left>
+
+"LaTex Compile and Show 
+"Compiles LaTeX File in background
+nmap <leader>cl :! runlatex % > logfile 2>&1 &<CR><CR>
+"Open up pdf associated with current LaTeX file
+nmap <leader>ol :! okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
+
+
