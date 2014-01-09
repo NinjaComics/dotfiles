@@ -1,11 +1,33 @@
-" Minimal vimrc 
-"
+" vimrc 
 
 " Author: Ravi Sharan B A G
-" Last Change: 20 Nov 2013
+" Last Change: 09 Jan 2014
 
 " Use Vim settings, rather than Vi setings.
 " If you don't understand a setting in here, just type ':h setting'.
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vim Bundle(Vundle) for better plugin management. 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" The bundles you install will be listed here
+
+filetype plugin indent on
+
+
+"""""""""""""""""""""""""""
+" Other vim configurations. 
+"""""""""""""""""""""""""""
 
 " Make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -30,9 +52,6 @@ colorscheme slate
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
-
-" vim-pathogen
-execute pathogen#infect()
 
 " Make backspace work normally 
 set bs=indent,eol,start
