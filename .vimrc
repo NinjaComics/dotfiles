@@ -26,7 +26,7 @@ Bundle 'gmarik/vundle'
 """"""""""""""""""""""""""""""""""""""""""""""
 
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-
+Bundle 'scrooloose/nerdtree'
 
 
 filetype plugin indent on
@@ -132,3 +132,6 @@ nmap <leader>ol :! okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
 " Powerline setup
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
+
+" Activate NerdTree with F2
+map <F2> :NERDTreeToggle
