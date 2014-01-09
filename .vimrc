@@ -20,7 +20,14 @@ call vundle#rc()
 " required!
 Bundle 'gmarik/vundle'
 
-" The bundles you install will be listed here
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" The bundles you install will be listed here:
+""""""""""""""""""""""""""""""""""""""""""""""
+
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+
 
 filetype plugin indent on
 
@@ -122,4 +129,6 @@ nmap <leader>cl :! runlatex % > logfile 2>&1 &<CR><CR>
 "Open up pdf associated with current LaTeX file
 nmap <leader>ol :! okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
 
-
+" Powerline setup
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+set laststatus=2
