@@ -21,12 +21,13 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 
-""""""""""""""""""""""""""""""""""""""""""""""
-" The bundles you install will be listed here:
-""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""
+" Vundle - Bundles
+""""""""""""""""""
 
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
 
 
 filetype plugin indent on
