@@ -28,7 +28,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'flazz/vim-colorschemes'
 
 filetype plugin indent on
 
@@ -55,7 +56,7 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme slate
+colorscheme blue 
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
@@ -136,3 +137,8 @@ set laststatus=2
 
 " Activate NerdTree with F2
 map <F2> :NERDTreeToggle
+
+" Solarized Colorscheme
+"syntax enable
+"set background=light
+"colorscheme solarized
