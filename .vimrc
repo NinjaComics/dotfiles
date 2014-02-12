@@ -56,7 +56,7 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme blue 
+colorscheme slate 
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
@@ -142,3 +142,7 @@ map <F2> :NERDTreeToggle
 "syntax enable
 "set background=light
 "colorscheme solarized
+
+"Omnicomplete 
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
