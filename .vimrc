@@ -30,6 +30,10 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
+Bundle 'cocopon/iceberg.vim'
+Bundle 'ervandew/supertab'
+
+
 
 filetype plugin indent on
 
@@ -146,3 +150,29 @@ map <F2> :NERDTreeToggle
 "Omnicomplete 
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+
+"80 Character Color Indicator
+if (v:version >=703)
+    set colorcolumn=100
+    hi ColorColumn ctermbg=grey ctermfg=white guibg=#592929
+endif
+
+"Open help in new window
+set helpheight=999
+" when viewing the help documentation
+" use a full-sized window (instead of 1/2 the size)
+
+"Highlight all search matches
+set hlsearch
+
+"Copy to clipboard
+if has("clipboard")
+    vnoremap y "*y
+    nnoremap yy "*yy
+    vnoremap d "*d
+    nnoremap dd "*dd
+    vnoremap x "*x
+    nnoremap x "*x
+    vnoremap p "*p
+    nnoremap p "*p
+endif
