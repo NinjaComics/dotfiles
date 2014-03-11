@@ -1,7 +1,7 @@
 " vimrc 
 
 " Author: Ravi Sharan B A G
-" Last Change: 09 Jan 2014
+" Last Change: 11 Mar 2014
 
 " Use Vim settings, rather than Vi setings.
 " If you don't understand a setting in here, just type ':h setting'.
@@ -32,7 +32,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'cocopon/iceberg.vim'
 Bundle 'ervandew/supertab'
-
+Bundle 'vim-scripts/c.vim'
 
 
 filetype plugin indent on
@@ -60,7 +60,7 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme slate 
+colorscheme Monokai 
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
