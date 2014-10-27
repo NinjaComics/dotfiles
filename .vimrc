@@ -34,6 +34,7 @@ Plugin 'cocopon/iceberg.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/c.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -175,4 +176,5 @@ if has("clipboard")
     nnoremap p "*p
 endif
 
-
+"Tagbar settings
+nmap <F8> :TagbarToggle<CR>
