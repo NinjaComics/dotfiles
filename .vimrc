@@ -1,7 +1,7 @@
 " vimrc 
 
 " Author: Ravi Sharan B A G
-" Last Change: 11 Mar 2014
+" Last Change: 11 June 2014
 
 " Use Vim settings, rather than Vi setings.
 " If you don't understand a setting in here, just type ':h setting'.
@@ -33,6 +33,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'cocopon/iceberg.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/c.vim'
+Plugin 'majutsushi/tagbar'
 
 call vundle#end()
 filetype plugin indent on
@@ -60,14 +61,11 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme Monokai 
+colorscheme Monokai
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
 vnoremap > >gv " better indentation
-
-" Make backspace work normally 
-set bs=indent,eol,start
 
 " Allow mouse in xterm or GUI
 set mouse=a
@@ -140,7 +138,7 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
 set laststatus=2
 
 " Activate NerdTree with F2
-map <F2> :NERDTreeToggle
+map <F3> :NERDTreeToggle
 
 " Solarized Colorscheme
 "syntax enable
@@ -153,7 +151,7 @@ set omnifunc=syntaxcomplete#Complete
 
 "80 Character Color Indicator
 if (v:version >=703)
-    set colorcolumn=100
+    set colorcolumn=80
     hi ColorColumn ctermbg=grey ctermfg=white guibg=#592929
 endif
 
@@ -176,3 +174,5 @@ if has("clipboard")
     vnoremap p "*p
     nnoremap p "*p
 endif
+
+
