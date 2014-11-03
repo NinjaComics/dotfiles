@@ -34,7 +34,6 @@ Plugin 'cocopon/iceberg.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/c.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -62,7 +61,7 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme Monokai
+colorscheme 256-grayvim 
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
