@@ -1,7 +1,7 @@
 " vimrc 
 
 " Author: Ravi Sharan B A G
-" Last Change: 11 June 2014
+" Last Change: 07 Jan 2015 
 
 " Use Vim settings, rather than Vi setings.
 " If you don't understand a setting in here, just type ':h setting'.
@@ -177,3 +177,31 @@ endif
 
 "Tagbar settings
 nmap <F8> :TagbarToggle<CR>
+
+"Syntastic settings
+
+""mark syntax errors with :signs
+let g:syntastic_enable_signs=1
+""automatically jump to the error when saving the file
+let g:syntastic_auto_jump=0
+""show the error list automatically
+let g:syntastic_auto_loc_list=1
+""don't care about warnings
+let g:syntastic_quiet_messages = {'level': 'warnings'}
+
+" If you visually select something and hit paste
+" " that thing gets yanked into your buffer. This
+" " generally is annoying when you're copying one item
+" " and repeatedly pasting it. This changes the paste
+" " command in visual mode so that it doesn't overwrite
+" " whatever is in your paste buffer.
+" "
+vnoremap p "_dP
+
+"Q-fix and easy :wq
+nnoremap ,q :wq
+
+"vim-solarized-colors Settings
+syntax enable
+set background=dark
+colorscheme solarized
