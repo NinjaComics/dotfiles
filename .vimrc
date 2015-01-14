@@ -25,7 +25,7 @@ Plugin 'gmarik/Vundle.vim'
 " Vundle - Bundles
 """"""""""""""""""
 
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
@@ -34,6 +34,7 @@ Plugin 'cocopon/iceberg.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/c.vim'
 Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 filetype plugin indent on
@@ -175,9 +176,6 @@ if has("clipboard")
     nnoremap p "*p
 endif
 
-"Tagbar settings
-nmap <F8> :TagbarToggle<CR>
-
 "Syntastic settings
 
 ""mark syntax errors with :signs
@@ -205,3 +203,6 @@ nnoremap ,q :wq
 syntax enable
 set background=dark
 colorscheme solarized
+
+" Vim-airline config
+let g:airline_powerline_fonts = 1
