@@ -24,7 +24,7 @@ Plugin 'gmarik/Vundle.vim'
 """"""""""""""""""
 " Vundle - Bundles
 """"""""""""""""""
-
+"Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
@@ -206,3 +206,6 @@ colorscheme solarized
 
 " Vim-airline config
 let g:airline_powerline_fonts = 1
+
+" make yank copy to the global system clipboard
+set clipboard=unnamed
