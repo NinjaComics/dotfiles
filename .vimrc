@@ -207,5 +207,7 @@ colorscheme solarized
 " Vim-airline config
 let g:airline_powerline_fonts = 1
 
-" make yank copy to the global system clipboard
-set clipboard=unnamed
+" copy or paste from X11 clipboard
+" " http://vim.wikia.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
+vmap "+y :!xclip -f -sel clip
+map "+p :r!xclip -o -sel clip
