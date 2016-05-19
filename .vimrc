@@ -211,3 +211,10 @@ let g:airline_powerline_fonts = 1
 " " http://vim.wikia.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
 vmap "+y :!xclip -f -sel clip
 map "+p :r!xclip -o -sel clip
+
+" Workaround for :Q to :q
+command! Q :q
+command! W :w
+
+nnoremap ; :
+nnoremap : ;
