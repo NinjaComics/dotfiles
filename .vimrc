@@ -1,11 +1,8 @@
 " vimrc 
-
-" Author: Ravi Sharan B A G
-" Last Change: 07 Jan 2015 
+" Author: Ravi Sharan B A G 
 
 " Use Vim settings, rather than Vi setings.
 " If you don't understand a setting in here, just type ':h setting'.
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Vim Bundle(Vundle) for better plugin management. 
@@ -24,17 +21,15 @@ Plugin 'gmarik/Vundle.vim'
 """"""""""""""""""
 " Vundle - Bundles
 """"""""""""""""""
-"Plugin 'powerline/powerline'
 Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'flazz/vim-colorschemes'
 Plugin 'cocopon/iceberg.vim'
 Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/c.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-fugitive'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'tomasr/molokai'
 
 call vundle#end()
 filetype plugin indent on
@@ -50,7 +45,6 @@ set backspace=indent,eol,start
 "Switch syntax highligting on
 filetype off
 filetype plugin indent on
-syntax on
 
 "Enable file type detection and do language-dependent indenting
 filetype plugin indent on
@@ -62,7 +56,11 @@ set nu
 au BufWritePost .vimrc so ~/.vimrc
 
 " Color Scheme
-colorscheme 256-grayvim 
+syntax enable
+set t_Co=256
+set background=dark
+"let g:solarized_termcolors=256
+colorscheme solarized
 
 " Easier moving of code blocks
 vnoremap < <gv " better indentation
@@ -75,7 +73,7 @@ set mouse=a
 inoremap jj <Esc>
 
 " Automatically indent C code
-set cindent
+" set cindent
 
 " Strip all trailing whitespace characters in current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -130,21 +128,16 @@ match Error /\s\+$/
 
 "LaTex Compile and Show 
 "Compiles LaTeX File in background
-nmap <leader>cl :! runlatex % > logfile 2>&1 &<CR><CR>
+"nmap <leader>cl :! runlatex % > logfile 2>&1 &<CR><CR>
 "Open up pdf associated with current LaTeX file
-nmap <leader>ol :! okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
+"nmap <leader>ol :! okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
 
 " Powerline setup
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-set laststatus=2
+"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
+"set laststatus=2
 
-" Activate NerdTree with F2
+" Activate NerdTree with F3
 map <F3> :NERDTreeToggle
-
-" Solarized Colorscheme
-"syntax enable
-"set background=light
-"colorscheme solarized
 
 "Omnicomplete 
 filetype plugin on
@@ -153,7 +146,7 @@ set omnifunc=syntaxcomplete#Complete
 "80 Character Color Indicator
 if (v:version >=703)
     set colorcolumn=80
-    hi ColorColumn ctermbg=grey ctermfg=white guibg=#592929
+    hi ColorColumn ctermbg=grey ctermfg=blue guibg=#592929
 endif
 
 "Open help in new window
@@ -187,24 +180,9 @@ let g:syntastic_auto_loc_list=1
 ""don't care about warnings
 let g:syntastic_quiet_messages = {'level': 'warnings'}
 
-" If you visually select something and hit paste
-" " that thing gets yanked into your buffer. This
-" " generally is annoying when you're copying one item
-" " and repeatedly pasting it. This changes the paste
-" " command in visual mode so that it doesn't overwrite
-" " whatever is in your paste buffer.
-" "
-vnoremap p "_dP
-
-"Q-fix and easy :wq
-nnoremap ,q :wq
-
-"vim-solarized-colors Settings
-syntax enable
-set background=dark
-colorscheme solarized
-
 " Vim-airline config
+set laststatus=2
+let g:airline_detect_paste=1
 let g:airline_powerline_fonts = 1
 
 " copy or paste from X11 clipboard
