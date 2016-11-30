@@ -8,7 +8,6 @@
 " Vim Bundle(Vundle) for better plugin management. 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
-filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -46,6 +45,8 @@ set backspace=indent,eol,start
 filetype off
 filetype plugin indent on
 
+nnoremap <Space> :noh<cr>
+
 "Enable file type detection and do language-dependent indenting
 filetype plugin indent on
 
@@ -62,18 +63,11 @@ set background=dark
 "let g:solarized_termcolors=256
 colorscheme solarized
 
-" Easier moving of code blocks
-vnoremap < <gv " better indentation
-vnoremap > >gv " better indentation
-
 " Allow mouse in xterm or GUI
 set mouse=a
 
 " Escape is too far away without this mapping
 inoremap jj <Esc>
-
-" Automatically indent C code
-" set cindent
 
 " Strip all trailing whitespace characters in current file
 nnoremap <leader>W :%s/\s\+$//<cr>:let @/=''<CR>
@@ -121,21 +115,6 @@ nnoremap <leader>oo m`o<Esc>kO<Esc>``
 "Highlight Trailing whitespaces
 match Error /\s\+$/
 
-" Auto Close Parentheses, Brackets and Braces
-"imap { {}<left>
-"imap ( ()<left>
-"imap [ []<left>
-
-"LaTex Compile and Show 
-"Compiles LaTeX File in background
-"nmap <leader>cl :! runlatex % > logfile 2>&1 &<CR><CR>
-"Open up pdf associated with current LaTeX file
-"nmap <leader>ol :! okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
-
-" Powerline setup
-"set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 9
-"set laststatus=2
-
 " Activate NerdTree with F3
 map <F3> :NERDTreeToggle
 
@@ -157,6 +136,9 @@ set helpheight=999
 "Highlight all search matches
 set hlsearch
 
+" CLipboard 
+set clipboard=unnamedplus
+
 "Copy to clipboard
 if has("clipboard")
     vnoremap y "*y
@@ -170,7 +152,13 @@ if has("clipboard")
 endif
 
 "Syntastic settings
-
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
 ""mark syntax errors with :signs
 let g:syntastic_enable_signs=1
 ""automatically jump to the error when saving the file
@@ -179,11 +167,19 @@ let g:syntastic_auto_jump=0
 let g:syntastic_auto_loc_list=1
 ""don't care about warnings
 let g:syntastic_quiet_messages = {'level': 'warnings'}
+let g:syntastic_python_checkers=['python', 'flake8']
 
 " Vim-airline config
 set laststatus=2
 let g:airline_detect_paste=1
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'powerlineish'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#branch#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tagbar#enabled = 1
+let g:airline_skip_empty_sections = 1
+let g:airline#extensions#virtualenv#enabled = 1
 
 " copy or paste from X11 clipboard
 " " http://vim.wikia.com/wiki/GNU/Linux_clipboard_copy/paste_with_xclip
@@ -194,5 +190,41 @@ map "+p :r!xclip -o -sel clip
 command! Q :q
 command! W :w
 
-nnoremap ; :
-nnoremap : ;
+" Shortcut for norm
+vnoremap <C-n> :norm
+
+" vim-airline
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+if !exists('g:airline_powerline_fonts')
+  let g:airline#extensions#tabline#left_sep = ' '
+  let g:airline#extensions#tabline#left_alt_sep = '|'
+  let g:airline_left_sep          = '▶'
+  let g:airline_left_alt_sep      = '»'
+  let g:airline_right_sep         = '◀'
+  let g:airline_right_alt_sep     = '«'
+  let g:airline#extensions#branch#prefix     = '⤴' "➔, ➥, ⎇
+  let g:airline#extensions#readonly#symbol   = '⊘'
+  let g:airline#extensions#linecolumn#prefix = '¶'
+  let g:airline#extensions#paste#symbol      = 'ρ'
+  let g:airline_symbols.linenr    = '␊'
+  let g:airline_symbols.branch    = '⎇'
+  let g:airline_symbols.paste     = 'ρ'
+  let g:airline_symbols.paste     = 'Þ'
+  let g:airline_symbols.paste     = '∥'
+  let g:airline_symbols.whitespace = 'Ξ'
+else
+  let g:airline#extensions#tabline#left_sep = ''
+  let g:airline#extensions#tabline#left_alt_sep = ''
+
+  " powerline symbols
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.branch = ''
+  let g:airline_symbols.readonly = ''
+  let g:airline_symbols.linenr = ''
+endif
