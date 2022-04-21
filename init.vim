@@ -15,8 +15,13 @@ Plug 'benekastah/neomake'
 Plug 'Shougo/deoplete.nvim'
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
+"Plug 'kyazdani42/nvim-tree.lua'
+"Plug 'tmhedberg/SimpylFold'
 
 call plug#end()
+
+" Activate NerdTree with F3
+map <F3> :NERDTreeToggle<CR>
 
 " Make backspace behave in a sane manner
 set backspace=indent,eol,start
@@ -35,7 +40,7 @@ set nu
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme solarized 
 
 " Allow mouse in xterm or GUI
 set mouse=a
@@ -67,9 +72,6 @@ nnoremap <leader>oo m`o<Esc>kO<Esc>``
 
 "Highlight Trailing whitespaces
 match Error /\s\+$/
-
-" Activate NerdTree with F3
-map <F3> :NERDTreeToggle
 
 "Omnicomplete 
 filetype plugin on
